@@ -41,4 +41,4 @@ On your OctoPi machine you will need to forward the ports outward. (Highly recom
     User: "Alexa, ask Octo Print for the printer status."
     Alexa: "Printer is not operational."
     
-## Recources
+## Resources
