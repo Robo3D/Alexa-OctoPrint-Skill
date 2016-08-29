@@ -1,0 +1,17 @@
+PrintStausIntent print status
+PrintStausIntent printer status
+PrintStausIntent status
+PrintStausIntent status of print
+PrintStausIntent the status
+
+StopPrintIntent stop
+StopPrintIntent stop the print
+StopPrintIntent stop print
+
+StartPrintIntent start
+StartPrintIntent start the print
+StartPrintIntent start print
+
+AMAZON.HelpIntent help
+AMAZON.HelpIntent for help
+AMAZON.HelpIntent commands

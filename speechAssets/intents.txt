@@ -1,0 +1,16 @@
+{
+  "intents": [
+    {
+      "intent": "PrintStatusIntent"
+    },
+    {
+      "intent": "StopPrintIntent"
+    },
+    {
+      "intent": "StartPrintIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}
