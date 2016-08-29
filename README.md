@@ -1,5 +1,5 @@
 # Amazon Alexa + OctoPi
-A simple [AWS Lambda](http://aws.amazon.com/lambda) function that uses the Alexa SDK to control OctoPi.
+A simple [AWS Lambda](http://aws.amazon.com/lambda) function that uses the [Alexa SDK](https://developer.amazon.com/alexa-skills-kit) to control [Octoprint](http://octoprint.org/) & [OctoPi](https://octopi.octoprint.org/).
 
 ## Concepts
 This proof of concept has no external dependencies or session management, and shows the most basic usage for handling Alexa Skill requests then posting JSON data to a server.
