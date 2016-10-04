@@ -1,6 +1,30 @@
 {
   "intents": [
     {
+      "intent": "GetCodeIntent",
+      "slots": [
+        {
+          "name": "code",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "AMAZON.YesIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
+    },
+    {
       "intent": "PrintStatusIntent"
     },
     {
@@ -8,9 +32,6 @@
     },
     {
       "intent": "StartPrintIntent"
-    },
-    {
-      "intent": "AMAZON.HelpIntent"
     }
   ]
 }
