@@ -2,11 +2,11 @@
 A simple [AWS Lambda](http://aws.amazon.com/lambda) function that uses the [Alexa SDK](https://developer.amazon.com/alexa-skills-kit) to control [Octoprint](http://octoprint.org/) & [OctoPi](https://octopi.octoprint.org/).
 
 ## Concepts
-This proof of concept has no external dependencies or session management, and shows the most basic usage for handling Alexa Skill requests then posting JSON data to a server.
+Connect an Alexa Voice Service with Octoprint Running on a Raspberry Pi
 
 ## Setup
-To run this skill you need to do a few setup things. The first is to deploy the example code in lambda, and the second is to configure the Alexa skill to use Lambda.
-On your OctoPi machine you will need to forward the ports outward. (Highly recommend setting a username / password that is not default)
+To run this skill you need to do a few setup things. The first is to deploy the code in Lambda, and the second is to configure the Alexa Skill to use Lambda.
+On your OctoPi machine you will need to install the Octoprint-Alexa-Plugin
 
 ### AWS Lambda Setup
 1. Go to the AWS Console and click on the Lambda link. Note: ensure you are in us-east or you won't be able to use Alexa with Lambda.
@@ -36,6 +36,14 @@ On your OctoPi machine you will need to forward the ports outward. (Highly recom
 7. You are now able to start testing your sample skill! You should be able to go to the [Echo webpage](http://echo.amazon.com/#skills) and see your skill enabled.
 8. In order to test it, try to say some of the Sample Utterances from the Examples section below.
 9. Your skill is now saved and once you are finished testing you can continue to publish your skill.
+
+### Octoprint Plugin Setup
+1. Open Octoprint and Navigate to Settings
+2. Open Plugins and type '' as the source
+3. Install the plugin and reboot your Octoprint device
+4. Open Octoprint and Navigate to Settings
+5. Open Alexa Voice Service under Plugins
+6. Continue with Authentication on Alexa
 
 ## Examples
     User: "Alexa, ask Octo Print for the printer status."
