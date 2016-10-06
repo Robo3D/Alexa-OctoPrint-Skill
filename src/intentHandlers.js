@@ -17,10 +17,10 @@ var registerIntentHandlers = function(intentHandlers, skillContext) {
             storage.loadGame(session, function(isConnected, userData) {
                 if (isConnected) {
                     session.attributes.isConnected = true;
-		   // load status from dynamoDB
-		   storage.loadStatus(session, function(isConnected, userData) {
-		   response.ask(userData);
-		});
+           // load status from dynamoDB
+           storage.loadStatus(session, function(isConnected, userData) {
+           response.ask(userData);
+        });
                 } else {
                     speechOutput = 'It seems you haven\'t connected a printer yet. Would you like to connect one now?';
                     session.attributes.setupIndex = 1;
@@ -29,9 +29,57 @@ var registerIntentHandlers = function(intentHandlers, skillContext) {
             });
         } 
         else {
-	    // load status from dynamoDB
-	    storage.loadStatus(session, function(isConnected, userData) {
-		response.ask(userData);
+        // load status from dynamoDB
+        storage.loadStatus(session, function(isConnected, userData) {
+        response.ask(userData);
+            });  
+        }
+    }
+    intentHandlers.StartPrintIntent = function(intent, session, response) {
+        var speechOutput = '';
+        if ((session.attributes.isConnected == false) || (session.attributes.isConnected == undefined)) {
+            storage.loadGame(session, function(isConnected, userData) {
+                if (isConnected) {
+                    session.attributes.isConnected = true;
+           // load status from dynamoDB
+           storage.postCommand('start', session, function(userData) {
+            response.ask(userData);
+            });
+                } else {
+                    speechOutput = 'It seems you haven\'t connected a printer yet. Would you like to connect one now?';
+                    session.attributes.setupIndex = 1;
+                    response.ask(speechOutput);
+                }
+            });
+        } 
+        else {
+        // load status from dynamoDB
+        storage.postCommand('start', session, function(userData) {
+            response.ask(userData);
+            }); 
+        }
+    }
+    intentHandlers.StopPrintIntent = function(intent, session, response) {
+        var speechOutput = '';
+        if ((session.attributes.isConnected == false) || (session.attributes.isConnected == undefined)) {
+            storage.loadGame(session, function(isConnected, userData) {
+                if (isConnected) {
+                    session.attributes.isConnected = true;
+           // load status from dynamoDB
+            storage.postCommand('stop', session, function(userData) {
+            response.ask(userData);
+            }); 
+                } else {
+                    speechOutput = 'It seems you haven\'t connected a printer yet. Would you like to connect one now?';
+                    session.attributes.setupIndex = 1;
+                    response.ask(speechOutput);
+                }
+            });
+        } 
+        else {
+        // load status from dynamoDB
+        storage.postCommand('stop', session, function(userData) {
+            response.ask(userData);
             });  
         }
     }

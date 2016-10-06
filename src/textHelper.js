@@ -12,13 +12,11 @@ var textHelper = (function () {
 
     return {
         completeHelp: 'Here\'s some things you can say,'
-        + ' connect printer.'
-        + ' remove printer.'
         + ' printer status.'
         + ' start print.'
         + ' stop print.'
         + ' and exit.',
-        nextHelp: 'This is my robo 3d printer.',
+        nextHelp: 'This is my robo.',
 
         getPlayerName: function (recognizedPlayerName) {
             if (!recognizedPlayerName) {

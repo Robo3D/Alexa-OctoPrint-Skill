@@ -203,6 +203,27 @@ var storage = (function () {
                     callback(true, userData);
                 }
             });
+        },
+        postCommand: function (command, session, callback) {
+            dynamodb.putItem({
+                    TableName: 'commandTable',
+                    Item: {
+                        deviceID: {
+                            S: session.attributes.userData.deviceID.S
+                        },
+                        command: {
+                            S: command
+                        }
+                    }
+                }, function (err2, data2) {
+                    if (err2) {
+                        console.log(err2, err2.stack);
+                    }
+                    if (callback) {
+                        callback(command);
+
+                    }
+                });
         }
     };
 })();
