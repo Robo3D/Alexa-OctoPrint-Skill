@@ -120,19 +120,11 @@ var registerIntentHandlers = function(intentHandlers, skillContext) {
     };
 
     intentHandlers['AMAZON.CancelIntent'] = function(intent, session, response) {
-        if (skillContext.needMoreHelp) {
-            response.tell('Okay.  Whenever you\'re ready, you can start giving points to the players in your game.');
-        } else {
-            response.tell('');
-        }
+            response.tell('Okay. Bye.');
     };
 
     intentHandlers['AMAZON.StopIntent'] = function(intent, session, response) {
-        if (skillContext.needMoreHelp) {
-            response.tell('Okay.  Whenever you\'re ready, you can start giving points to the players in your game.');
-        } else {
-            response.tell('');
-        }
+            response.tell('Okay. Bye.');
     };
 
     intentHandlers['AMAZON.NoIntent'] = function(intent, session, response) {
