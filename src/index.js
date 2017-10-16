@@ -224,7 +224,7 @@ OctoAlexa.prototype.intentHandlers = {
     "StopPrintIntent": function (intent, session, response) {
     },
     "AMAZON.HelpIntent": function (intent, session, response) {
-        response.tell("This is Templeton" + OCTO_NAME + ". You can send commands such as start, stop, and request the status of your 3D printer. Get Rekt.");    }
+        response.tell("This is Templeton" + OCTO_NAME + ". You can send commands such as start, stop, and request the status of your 3D printer.");    }
 };
 
 // Create the handler that responds to the Alexa Request.
