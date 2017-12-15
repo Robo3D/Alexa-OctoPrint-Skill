@@ -139,6 +139,122 @@ OctoAlexa.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest
 
 OctoAlexa.prototype.intentHandlers = {
     // register custom intent handlers
+    "StopPrintIntent": function (intent, session, response) {
+        var options = {
+            uri: OCTO_PATH + ':' + OCTO_PORT + '/api/control/job',
+            method: 'POST',
+            body: {
+              "command": "cancel"
+            },
+            headers : {
+                      'Content-Type': 'application/json',
+                      'X-Api-Key':OCTO_KEY},
+            json: true // Automatically parses the JSON string in the response
+        }
+        rp(options)
+        .then(function(body) {
+            response.tell(OCTO_NAME + " is cancelling current print");
+        })
+        .catch(function(err) {
+            response.tell("err "+ err)
+        })
+    },
+    "HeatupPLAIntent": function (intent, session, response) {
+        var options = {
+            uri: OCTO_PATH + ':' + OCTO_PORT + '/api/printer/tool',
+            method: 'POST',
+            body: {
+              "command": "target",
+              "targets": {
+                "tool0": 215,
+                "tool1": 65
+              }
+            },
+            headers : {
+                      'Content-Type': 'application/json',
+                      'X-Api-Key':OCTO_KEY},
+            json: true // Automatically parses the JSON string in the response
+        }
+        rp(options)
+        .then(function(body) {
+            response.tell(OCTO_NAME + " is preheating for P L A");
+        })
+        .catch(function(err) {
+            response.tell("err "+ err)
+        })
+    },
+    "HeatupABSIntent": function (intent, session, response) {
+        var options = {
+            uri: OCTO_PATH + ':' + OCTO_PORT + '/api/printer/tool',
+            method: 'POST',
+            body: {
+              "command": "target",
+              "targets": {
+                "tool0": 250,
+                "tool1": 110
+              }
+            },
+            headers : {
+                      'Content-Type': 'application/json',
+                      'X-Api-Key':OCTO_KEY},
+            json: true // Automatically parses the JSON string in the response
+        }
+        rp(options)
+        .then(function(body) {
+            response.tell(OCTO_NAME + " is preheating for A B S");
+        })
+        .catch(function(err) {
+            response.tell("err "+ err)
+        })
+    },
+    "HeatupTglaseIntent": function (intent, session, response) {
+        var options = {
+            uri: OCTO_PATH + ':' + OCTO_PORT + '/api/printer/tool',
+            method: 'POST',
+            body: {
+              "command": "target",
+              "targets": {
+                "tool0": 245,
+                "tool1": 75
+              }
+            },
+            headers : {
+                      'Content-Type': 'application/json',
+                      'X-Api-Key':OCTO_KEY},
+            json: true // Automatically parses the JSON string in the response
+        }
+        rp(options)
+        .then(function(body) {
+            response.tell(OCTO_NAME + " is preheating for tee glass");
+        })
+        .catch(function(err) {
+            response.tell("err "+ err)
+        })
+    },
+    "HeatupNylonIntent": function (intent, session, response) {
+        var options = {
+            uri: OCTO_PATH + ':' + OCTO_PORT + '/api/printer/tool',
+            method: 'POST',
+            body: {
+              "command": "target",
+              "targets": {
+                "tool0": 290,
+                "tool1": 130
+              }
+            },
+            headers : {
+                      'Content-Type': 'application/json',
+                      'X-Api-Key':OCTO_KEY},
+            json: true // Automatically parses the JSON string in the response
+        }
+        rp(options)
+        .then(function(body) {
+            response.tell(OCTO_NAME + " is preheating for Nylon. This will take a while.");
+        })
+        .catch(function(err) {
+            response.tell("err "+ err)
+        })
+    },
     "PrintStatusIntent": function (intent, session, response) {
         var options = {
             uri: OCTO_PATH + ':' + OCTO_PORT + '/api/printer',
@@ -224,7 +340,7 @@ OctoAlexa.prototype.intentHandlers = {
     "StopPrintIntent": function (intent, session, response) {
     },
     "AMAZON.HelpIntent": function (intent, session, response) {
-        response.tell("This is Templeton" + OCTO_NAME + ". You can send commands such as start, stop, and request the status of your 3D printer.");    }
+        response.tell("This is" + OCTO_NAME + ". You can send commands such as start, stop, and request the status of your 3D printer.");    }
 };
 
 // Create the handler that responds to the Alexa Request.
