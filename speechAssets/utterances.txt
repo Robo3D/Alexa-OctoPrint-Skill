@@ -1,20 +1,39 @@
+GetCodeIntent my code is
+GetCodeIntent my code is {code}
 AMAZON.HelpIntent help
 AMAZON.HelpIntent for help
 AMAZON.HelpIntent to help
-
-GetCodeIntent my code is
-GetCodeIntent my code is {code}
-
 PrintStatusIntent print status
 PrintStatusIntent printer status
 PrintStatusIntent status
 PrintStatusIntent status of print
 PrintStatusIntent the status
-
+BedTemperatureIntent the bed temperature
+BedTemperatureIntent for bed temperature
+BedTemperatureIntent bed temperature
+ExtruderTemperatureIntent the Extruder temperature
+ExtruderTemperatureIntent temperature
+ExtruderTemperatureIntent for temperature
+ExtruderTemperatureIntent hot end temperature
+ExtruderTemperatureIntent print temperature
+TemperatureIntent for the temperature
+TemperatureIntent for the temperatures
+TemperatureIntent for the current temperature
+TemperatureIntent for the current temperatures
+TemperatureIntent for temps
+TemperatureIntent for current temps
+JobStatusIntent what is printing
+JobStatusIntent what's printing
+JobStatusIntent printing
+JobStatusIntent currently printing
+JobStatusIntent what's currently printing
+JobStatusIntent what is currently printing
+JobStatusIntent printing now
+JobStatusIntent what is printing now
+JobStatusIntent what's printing now
 StopPrintIntent stop
 StopPrintIntent stop the print
 StopPrintIntent stop print
-
 StartPrintIntent start
 StartPrintIntent start the print
-StartPrintIntent start print
+StartPrintIntent start print  

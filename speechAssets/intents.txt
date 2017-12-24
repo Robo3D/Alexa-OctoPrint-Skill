@@ -1,13 +1,13 @@
 {
   "intents": [
     {
-      "intent": "GetCodeIntent",
       "slots": [
         {
           "name": "code",
           "type": "AMAZON.NUMBER"
         }
-      ]
+      ],
+      "intent": "GetCodeIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"
@@ -28,7 +28,37 @@
       "intent": "PrintStatusIntent"
     },
     {
-      "intent": "StopPrintIntent"
+      "intent": "BedTemperatureIntent"
+    },
+    {
+      "intent": "ExtruderTemperatureIntent"
+    },
+    {
+      "intent": "TemperatureIntent"
+    },
+    {
+      "intent": "JobStatusIntent"
+    },
+    {
+      "intent": "HeatupPLAIntent"
+    },
+    {
+      "intent": "HeatupABSIntent"
+    },
+    {
+      "intent": "HeatupTglaseIntent"
+    },
+    {
+      "intent": "HeatupNylonIntent"
+    },
+    {
+      "intent": "StartPrintIntent"
+    },
+    {
+      "intent": "StartPrintIntent"
+    },
+    {
+      "intent": "StartPrintIntent"
     },
     {
       "intent": "StartPrintIntent"
